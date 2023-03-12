@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+{% block body %}
+  
+
+
+    <h1 id="addds">user info</h1>
+
+
+<div>
+       <div id="addmycon">
+
+
+        
+            <div id="userinfo">
+                <p>name : {{uname}}</p>
+                <p>mobile.no: {{mono}}</p>
+            </div>
+
+
+        <table id="addmytable">
+
+
+            <tr>
+              <th>course name</th>
+            </tr>
+{% for post in add %}
+            <tr>
+                <td><a href="/lec/{{post.course}}">{{post.coursename}}</a></td>
+            </tr>
+{% endfor %}
+
+        </table>
+
+       </div>
+
+
+
+
+{% endblock %}

@@ -1,0 +1,51 @@
+{% extends "adminlayout.html" %}
+{% block body %}
+
+<!-- header section start here -->
+<header id='mainpost' style="background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)), url('{{ url_for('static', filename ='../static/blogpostthumbnail/banner1.jpg')}}')  " onmouseover="enavpo()">
+    <h1 class="postheading">Admin Pannel</h1>
+
+</header>
+
+
+<div id="postsec">
+    <table>
+        <tr>
+          <th>son</th>
+          <th>images</th>
+          <th>title</th>
+          <th>date</th>
+          <th>edit</th>
+          <th>delete</th>
+        </tr>
+
+        {% for post in posts %}
+        {% set fname = '../static/blogpostthumbnail/' + post.image %}
+        <tr>
+          <td>{{post.no}}</td>
+          <td><a href="/post/{{post.slug}}"><img src="{{ url_for('static', filename=fname)}}" alt="no image"></a></td>
+          <td><a href="/post/{{post.slug}}">{{post.title}}</a></td>
+          <td>{{post.date}}</td>
+          <td><a href="/edit/{{post.no}}"><button>edit</button></a></td>
+          <td><a href="/delete/{{post.no}}"><button>delete</button></a></td>
+        </tr>
+        {% endfor %}
+      </table>
+        {% for post in posts %}
+        {% set fname = '../static/blogpostthumbnail/' + post.image %}
+        <div id="postfatch">
+          <div class="innerdiv">
+          <a href="/post/{{post.slug}}"><img src="{{ url_for('static', filename=fname)}}"></a>
+         <div class="indivin">
+          <a href="/post/{{post.slug}}"><h5>{{post.title}}</h5></a>
+          <br>
+           <p>{{post.date}}</p>
+          </div>
+        </div> 
+          <a href="/edit/{{post.no}}"><button>edit</button></a>
+          <a href="/delete/{{post.no}}"><button>delete</button></a>
+        </div>
+        {% endfor %}
+
+</div>
+{% endblock %}

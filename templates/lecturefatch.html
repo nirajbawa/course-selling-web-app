@@ -1,0 +1,33 @@
+{% extends "adminlayout.html" %}
+{% block body %}
+<header id='mainpost' style="background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)), url('{{ url_for('static', filename ='../static/blogpostthumbnail/banner3.jpg')}}')  " onmouseover="enavpo()">
+    <h1 class="postheading">lectures</h1>
+</header>
+
+
+
+
+
+<div id="lrfmain">
+    <h1 id="lfrhed">lectures</h1>
+    <div id="btnlfr"><a href="/lectureedit/0"><button>add lecture</button></a></div>
+    {% for lecture in lec %}
+    <div id="lfrbody">
+        <div>
+            <h2>
+               <a href="/lecture/{{lecture.lid}}">{{lecture.lecturename}}</a>
+            </h2>
+        </div>
+        <div>
+            <p><a href="/lecture/{{lecture.lid}}">{{lecture.category}}</a></p>
+        </div>
+        <div>
+            <a href="/lectureedit/{{lecture.lid}}}"><button>edit</button></a>
+            <a href="/deletelec/{{lecture.lid}}"><button>delete</button></a>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+
+{% endblock %}

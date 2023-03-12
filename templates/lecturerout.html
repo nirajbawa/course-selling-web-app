@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+{% block body %}
+
+
+
+<div id="lrmain">
+{% for post in lectures %}
+
+<div id="lro">
+    <a href="/lecture/{{post.lid}}"><h3>{{post.lecturename}}</h3></a>
+    <a href="/lecture/{{post.lid}}"><p>{{post.lecturecontent[0:50]}}</p></a>
+    <p>{{post.lecturedate}}</p>
+</div>
+
+{% endfor %}
+</div>
+
+{% endblock %}

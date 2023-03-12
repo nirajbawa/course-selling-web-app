@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sign up</title>
+
+    <!-- css link -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='../static/css/loginpage.css')}}">
+</head>
+<body>
+    {% set limg = '../static/images/' + params['login_page_image'] %}
+    <div id="logform" style="padding-top: 3%;">
+       <img src="{{ url_for('static', filename= limg)}}" alt="">
+        <h1 style="font-size: 30px;">create your account</h1>
+        <form class="log" action="/signup" method="post">
+            <input type="text" class="uname" name="username" placeholder="please enter name to you submit in buying form" required>
+            <br>
+            <input type="password" class="uname" name="password" placeholder="password" required >
+            <br>
+            <input type="email" class="uname" name="email" placeholder="email" required >
+            <br>
+            <input type="tel" class="uname" name="mono" placeholder="please enter mobile number to you submit in buying form" required>
+            <br>
+            <button type="submit" class="btnf">sign up</button>
+        </form>
+    </div>
+</body>
+</html>

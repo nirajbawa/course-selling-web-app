@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+        <!-- css link -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='../static/css/loginpage.css')}}">
+</head>
+<body>
+    {% set limg = '../static/images/' + params['login_page_image'] %}
+    <div id="logform" style="padding-top: 10%;">
+       <img src="{{ url_for('static', filename= limg)}}" alt="">
+        <h1 style="font-size: 20px;">check your mail box and enter otp</h1>
+        <form class="log" action="/verfiotp" method="post">
+            <input type="number" class="uname" name="otp" placeholder="enter your otp" required>
+            <br>
+            <button type="submit" class="btnf">sign up</button>
+        </form>
+    </div>
+</body>
+</html>

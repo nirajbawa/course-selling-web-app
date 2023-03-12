@@ -1,0 +1,142 @@
+{% extends "layout.html" %}
+{% block body %}
+
+
+<!-- header section start here -->
+
+<header id='main' style="background-image: url('{{ url_for('static', filename='../static/images/bg21.png')}}')  ">
+
+
+<div id="con" onclick="clouse()">
+
+   <div>
+   <h1 id="h1"></h1>
+   <p id="p1"></p>
+   <a href="{{btnlink}}"><button class="bt6">{{btntext}}</button></a>
+ </div>
+
+   <img src="{{ url_for('static', filename='../static/images/b1.svg')}}" alt="img1" id="hadimg">
+</div>
+
+
+
+</header>
+
+<!-- blog post section -->
+<div id="post">
+
+    <div id="title">{{params['Post_Section_heading']}}</div>
+
+<div id="cont">
+
+    <!-- card 1 fetch it using data base-->
+    
+  
+{% for post in posts %}
+{% set fname = '../static/blogpostthumbnail/' + post.image %}  
+    <div class="card">
+        <div class="image">
+           <a href="/post/{{post.slug}}"> <img src="{{ url_for('static', filename=fname)}}" alt="poster"></a>
+        </div>
+        <div class="containt">
+            <a href="/post/{{post.slug}}"><h2>{{post.title}}</h2>
+            <p>
+                {{post.content[0:80]}}......
+            </p>
+        </div>
+    </div>
+  </a>
+{% endfor %}
+</div>
+
+<button id="readmore"><a href="/projects">read more</a></button>
+
+</div>
+
+
+<!-- about scetion start hare -->
+<div id="about">
+    <div id="abt">about</div>
+    <div id="abmain">
+        <div id="imagesection">
+            <img src="{{ url_for('static', filename='../static/images/authoreimg.png')}}" alt="athoreimg">
+        </div>
+
+        <div id="abcontaint">
+
+            <div id="atinfo">
+                <p>{{params['About_Section_Name']}}</p>
+                <p>{{params['About_Section_Education_Line1']}}<br>
+                <p>{{params['About_Section_Education_Line2']}}</p>
+                <p>{{params['About_Section_Education_Line3']}}</p>
+                                 
+                 <br><p>{{params['About_Section_Age']}}</p>
+                </p>
+            </div>
+            <div id="abme">
+                {{params['About_Section_AboutMe']}}
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- skill section start here -->
+<div id="skill">
+
+
+    <div id="sktitle">skills</div>
+
+
+<div id="skmain" onmouseover="skiani()">
+
+
+<div id="t2">skills</div>
+
+
+<p><img src="{{ url_for('static', filename='../static/images/digital-marketing.svg')}}" alt="dt"> digital marketing</p>
+<div class="container">
+  <div class="skills" id="dm">90%</div>
+</div>
+
+
+<p><img src="{{ url_for('static', filename='../static/images/wordpress.svg')}}" alt="wd"> wordpress</p>
+<div class="container">
+  <div class="skills" id="wd">85%</div>
+</div>
+
+<p><img src="{{ url_for('static', filename='../static/images/blogger.svg')}}" alt="bg"> blogger</p>
+<div class="container">
+  <div class="skills" id="bg">99%</div>
+</div>
+
+<p><img src="{{ url_for('static', filename='../static/images/multimedia.svg')}}" alt="ve"> video editing</p>
+<div class="container">
+  <div class="skills" id="ve">90%</div>
+</div>
+
+<p><img src="{{ url_for('static', filename='../static/images/design.svg')}}" alt="gd"> graphic designing</p>
+<div class="container">
+  <div class="skills" id="gd">80%</div>
+</div>
+
+<p><img src="{{ url_for('static', filename='../static/images/content-writing.svg')}}" alt="cw"> content writing</p>
+<div class="container">
+  <div class="skills" id="cw">60%</div>
+</div>
+
+<p><img src="{{ url_for('static', filename='../static/images/office.svg')}}" alt="mo"> microsoft office</p>
+<div class="container">
+  <div class="skills" id="of">85%</div>
+</div>
+
+
+</div>
+
+</div>
+
+
+
+<script src="{{ url_for('static', filename='../static/js/home.js')}}"></script>
+
+{% endblock %}

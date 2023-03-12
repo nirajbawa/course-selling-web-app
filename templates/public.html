@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<!-- header section start here -->
+
+<header id='main' style="background-image: url('{{ url_for('static', filename='../static/images/bg21.png')}}')  ">
+
+
+    <div id="con" onclick="clouse()">
+    
+       <div>
+       <h1 id="h1"></h1>
+       <p id="p1"></p>
+       <a href="{{btnlink}}"><button class="bt6">{{btntext}}</button></a>
+     </div>
+    
+       <img src="{{ url_for('static', filename='../static/images/public.svg')}}" alt="img1" id="hadimg" style="width: 400px; height: 600px;">
+    </div>
+    
+    
+    
+    </header>
+
+<div id="lrmain">
+    {% for post in lectu %}
+    
+    <div id="lro">
+        <a href="/public/{{post.video}}"><h3>{{post.lecturename}}</h3></a>
+        <a href="/public/{{post.video}}"><p>{{post.lecturecontent[0:50]}}</p></a>
+        <p style="margin-bottom: 3%; font-weight: bold;">{{post.category}}</p>
+        <p>{{post.lecturedate}}</p>
+    </div>
+    
+    {% endfor %}
+    </div>
+    <script src="{{ url_for('static', filename='../static/js/public.js')}}"></script>   
+
+{% endblock %}

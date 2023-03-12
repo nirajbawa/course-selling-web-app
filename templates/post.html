@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+{% block body %}
+
+
+<!-- header section start here -->
+
+{% set videoname = 'https://www.youtube.com/embed/' + post.introvideo %}
+{% set banner = '../static/blogpostthumbnail/' + post.bannerimg %}
+{% set fname = '../static/blogpostthumbnail/' + post.image %}
+<header id='mainpost' style="background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)), url('{{ url_for('static', filename = fname )}}')  ">
+    
+     <h1 class="postheading">{{post.title}}</h1>
+
+     <p class="date">{{post.date}}</p>
+</header>
+
+<div class="postcon">
+     <img src={{banner}} id="img">
+     <br>
+     <p>{{post.content}}</p>
+     <iframe src="{{videoname}}" frameborder="0" id="ifp" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+     <br>
+      <p id="price">{{post.courceprice}}  rs</p>
+      <a href="#"><button onclick="formopen()">buy</button></a>
+
+      <div id="buymain">
+          <form action="/post/{{post.slug}}" method="post">
+              <label for="">name : <input type="text" name="fname" placeholder="please enter your register name"></label>
+              <br>
+              <label for="">last name : <input type="text" name="lname"></label>
+              <br>
+              <label for="">email : <input type="email" name="umail"></label>
+              <br>
+              <label for="">Mobile.No : <input type="tel" name="telno" placeholder="please enter your register mobile number"></label>
+              <br>
+              <label for="" style="display: none;">course name : <input type="text" name="coursename" value="{{post.title}}"></label>
+              <br>
+              <label for="" style="display: none;">price : <input type="text" name="price" value="{{post.courceprice}}"></label>
+              <br>
+              <label for="" style="display: none;">course category : <input type="text" name="course" value="{{post.pcategory}}"></label>
+              <br>
+              <button type="submit">next</button>
+          </form>
+          
+      
+      
+      </div>
+
+
+</div>
+<script>
+     function formopen(){
+          document.getElementById("buymain").style.display="flex"
+     }
+</script>
+{% endblock %}

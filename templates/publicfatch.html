@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+{% block body %}
+
+
+
+{% set videoname = 'https://www.youtube.com/embed/' +  lectur.video %}
+{% set videochat = 'https://www.youtube.com/live_chat?v=' + lectur.video + '&embed' + '_domain=www.peggyktc.com' %}
+
+<div id="mainlec">
+<div id="lflex">
+<div id="mainl">
+<iframe src="{{videoname}}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<h3>{{lectur.lecturename}}</h3>
+</div>
+<div id="chatl">
+<iframe src="{{videochat}}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</div>
+</div>
+
+<h3 id="h3shl">{{lectur.lecturename}}</h3>
+
+<div id="lcon">
+{{lectur.lecturecontent}}
+</div>
+<h3 style="margin-top: 5%;">{{lectur.lecturedate}}</h3>
+</div>
+
+
+{% endblock %}

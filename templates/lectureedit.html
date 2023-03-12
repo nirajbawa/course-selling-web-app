@@ -1,0 +1,64 @@
+{% extends "adminlayout.html" %}
+{% block body %}
+<div id="epost">
+    <button id="res" onclick="editfuc()"><img src="{{ url_for('static', filename='../static/images/menu.svg')}}"></button>
+    <button id="resclose" onclick="editclose()"><img src="{{ url_for('static', filename='../static/images/close.svg')}}"></button>
+
+    <div id="etoolbar">
+        <div>
+        <p>text transform</p>
+        <button onclick="eupper()">uppercase</button>
+        <br>
+        <button onclick="elower()">lowercase</button>
+        <br>
+        <button onclick="capi()">capitalize</button>
+    </div>
+    <div>
+        <p>font size</p>
+        <select name="fontsize" id="fontsize" onblur="getfont()">
+            <option value="15">15</option>
+            <option value="20">20</option>
+            <option value="30">30</option>
+            <option value="40">40</option>
+            <option value="50">50</option>
+        </select>
+        <p>font style</p>
+        <div class="efont">
+        <button onclick="efoni()">italic</button>
+        <button onclick="efobo()">bold</button>
+        <button onclick="efono()">none</button>
+        </div>
+    </div>
+    <div>
+        <p>text-align</p>
+        <div class="fontstylee">
+        <button onclick="ecen()">center</button>
+        <br>
+        <button onclick="elef()">left</button>
+        <br>
+        <button onclick="erig()">right</button>
+        </div>
+    </div>
+    <div>
+        <div class="homee">
+        <a href="/admin"><button>home</button></a>
+        <br>
+        <form action="/uploader" method="post" enctype="multipart/form-data">
+            <input type="file" name="file1" class="upfi" required>
+            <br>
+            <button type="submit">upload file</button>
+        </form>       
+    </div>
+    </div>
+    </div>
+
+    <form action="/lectureedit/{{lid}}" method="post" onsubmit="submsalert()">
+        <input type="text" class="etitle" name="lecturename" value="{{acco.lecturename}}" placeholder="Title" required> <input type="text" name="video" class="eimage" value="{{acco.video}}" placeholder="video name" required> <button type="submit" class="esub">post</button>
+              <br>
+              <br>  
+        <textarea name="lecturecontent" class="etext" cols="520" rows="10" id="eatext">{{acco.lecturecontent}}</textarea>  
+        <input type="text" class="etitle" name="category" value="{{acco.category}}" placeholder="category" required>
+    </form>
+</div>
+<script src="{{ url_for('static', filename='../static/js/edit.js')}}"></script>
+{% endblock %}

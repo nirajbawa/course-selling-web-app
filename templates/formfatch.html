@@ -1,0 +1,35 @@
+{% extends "adminlayout.html" %}
+{% block body %}
+
+<div id="listform">
+
+    <h1 id="listfrmh">customers list</h1>
+
+<div id="listfmanu" style="margin-bottom: 10%;">
+<a href="/formfatch"><button>buy form</button></a>
+</div>
+
+{% for ff in fatchform %}
+<div id="lfrbody">
+    <div>
+        <h2>
+           <a href="#">name : {{ff.fname}}</a>
+        </h2>
+    </div>
+    <div>
+        <p><a href="#">last name : {{ff.lname}}</a></p>
+        <p><a href="#">email : {{ff.umail}}</a></p>
+        <p><a href="#">mobile number : {{ff.telno}}</a></p>
+        <p><a href="#">course name: {{ff.coursename}}</a></p>
+        <p><a href="#">course category: {{ff.course}}</a></p>
+        <p><a href="#">amount : {{ff.price}}</a></p>
+        <p><a href="#">buying date : {{ff.subdate}}</a></p>
+        <p><a href="#">sn : {{ff.sn}}</a></p>
+    </div>
+    <div>
+        <a href="/deletebuyformuser/{{ff.sn}}"><button>delete</button></a>
+    </div>
+</div>
+{% endfor %}
+
+{% endblock %}

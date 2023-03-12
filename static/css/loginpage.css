@@ -1,0 +1,84 @@
+*{
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+}
+
+
+#logform{
+    width: 100vw;
+    height: 100vh;
+    background-color: whitesmoke;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    padding-top: 5%;
+    font-family: 'Source Sans Pro', sans-serif;
+
+}
+
+
+#logform h1{
+    font-size: 40px;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    width: 350px;
+    background-color: white;
+    text-align: center;
+}
+
+#logform img{
+    width: 120px;
+    height: 120px;
+}
+
+.uname{
+    width: 350px;
+    height: 50px;
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 5px;
+    box-sizing: border-box;
+    border: 1px solid #999999;
+    margin-bottom: 20px;
+    text-transform: capitalize;
+    transition: all .15s;
+}
+
+.rbf{
+    text-align: center;    
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 25px;
+}
+
+.btnf{
+    width: 350px;
+    height: 50px;
+    text-align: center;
+    font-family: 'Source Sans Pro', sans-serif;
+    text-transform: capitalize;
+    font-size: 30px;
+    text-align: center;
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+    transition: all .15s;
+}
+
+.rerrormsg{
+    text-align: center;    
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 20px;
+    color: red;
+}
+
+.btnf:hover{
+    background: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), #0d6efd;
+}
+
+.uname:focus{
+    border: 5px solid #0d6efd;
+}

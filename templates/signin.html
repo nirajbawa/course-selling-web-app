@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sign in</title>
+
+
+        <!-- css link -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='../static/css/loginpage.css')}}">
+</head>
+<body>
+    {% set limg = '../static/images/' + params['login_page_image'] %}
+    <div id="logform" style="padding-top: 3%;">
+       <img src="{{ url_for('static', filename= limg)}}" alt="">
+        <h1 style="font-size: 30px;">sign in</h1>
+        <form class="log" action="#" method="post">
+            <input type="text" class="uname" name="username" placeholder="name" required>
+            <br>
+            <input type="password" class="uname" name="password" placeholder="password" required >
+            <br>
+            <input type="tel" class="uname" name="mono" placeholder="mobile number" required >
+            <br>
+            <p>{{errormsg}}</p>
+            <button type="submit" class="btnf">sign in</button>
+        </form>
+    </div>
+</body>
+</html>

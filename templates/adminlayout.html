@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>admin pannel</title>
+
+
+    <!-- css link -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='../static/css/dashboard.css')}}">
+
+
+    <!-- font link -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Heebo&display=swap" rel="stylesheet">
+
+    
+</head>
+<body>
+    <nav id="enav">
+        <a href="/admin" class="elog">{{params['heading']}}</a>
+        <div id="poech">
+        <a href="/edit/0"><button>add post</button></a>
+        <a href="/lecturefatch"><button>lectures</button></a>
+        <a href="/usernfo"><button>user info</button></a>
+        <a href="/formfatch"><button>form</button></a>
+        <a href="/logout"><button>logout</button></a>
+        <a href="" class="btnrse"><button onclick="emainclo()">x</button></a>
+      </div>
+        <a href="#" class="emainicoe" ><img src="{{ url_for('static', filename='../static/images/menu.svg')}}" onclick="eopenmain()"></a>
+      </nav>
+    {% block body %} {% endblock %}
+    <script src="{{ url_for('static', filename='../static/js/dashboard.js')}}"></script>
+</body>
+</html>

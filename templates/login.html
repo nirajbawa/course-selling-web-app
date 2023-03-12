@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Pannel</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='../static/css/loginpage.css')}}">
+
+    <!-- font link -->
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+{% set img = '../static/images/' + params['login_page_image'] %}
+    <div id="logform">
+       <img src="{{ url_for('static', filename= img)}}" alt="">
+        <h1>login</h1>
+        <form class="log" action="/admin" method="post">
+            <input type="text" class="uname" name="username" placeholder="username" required>
+            <br>
+            <input type="password" class="uname" name="password" placeholder="password" required >
+            <br>
+            <p class="rerrormsg">{{rerror}}</p>
+            <br>
+            <button type="submit" class="btnf">login</button>
+        </form>
+    </div>
+    
+</body>
+</html>

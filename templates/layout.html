@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{params['heading']}}</title>
+
+    <!-- css link -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='../static/css/home.css')}}">
+
+  
+    <!-- font link -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Nerko+One&family=Roboto+Slab&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@500&display=swap" rel="stylesheet">
+
+
+
+</head>
+<body>
+
+
+
+        <nav id="nav">
+            <!-- risponsive menu code -->
+            <button id="btn" onclick="menuopen()"><img src="{{ url_for('static', filename='../static/images/menu.svg')}}" alt="menuicon" id="menu"></button>
+
+            <div id="mobilemenu">
+                <button id="clo" onclick="clouse()"><img src="{{ url_for('static', filename='../static/images/close.svg')}}" alt="close"></button>
+                <div id="headimg">
+                    <img id="hedim" src="{{ url_for('static', filename='../static/images/logo.png')}}" alt="logo">
+                </div>
+                <div id="ma">
+               <a href="/"><p> <img src="{{ url_for('static', filename='../static/images/home.svg')}}" alt="home"> home</p></a>
+               <a href="/#about"><p> <img src="{{ url_for('static', filename='../static/images/information-button.svg')}}" alt="about"> about</p></a>
+               <a href="/projects"><p><img src="{{ url_for('static', filename='../static/images/programming.svg')}}" alt="blog">{{params['Post_Page_menu_name']}}</p></a>
+               <a href="/contact"><p><img src="{{ url_for('static', filename='../static/images/blog.svg')}}" alt="code">contact</p></a>
+               <a href="/mycourse"><p><img src="{{ url_for('static', filename='../static/images/information-button.svg')}}" alt="code">user info</p></a>
+               <a href="/public"><p><img src="{{ url_for('static', filename='../static/images/blog.svg')}}" alt="code">public</p></a>
+
+               <button class="btn11"><a href="{{btnlink}}">{{btntext}}</a></button>
+               </div>
+
+            </div>
+
+        <a href="/" id="log" class="logo"><h1>{{params['heading']}}</h1></a>
+
+     <ul>
+        <a href="/"><li>Home</li></a>
+        <a href="/#about"><li>about</li></a>
+        <a href="/projects"><li>{{params['Post_Page_menu_name']}}</li></a>
+        <a href="/contact"><li>contact</li></a>
+        <a href="/mycourse"><li>user info</li></a>
+        <a href="/public"><li>public</li></a>
+     </ul>
+     </nav>
+
+
+
+{% block body %} {% endblock %}
+
+<!-- gallery section start here -->
+<div id="gallery" style="display: none;">
+    <div id="gt1">{{params['Gallery_Section_Heading']}}</div>
+
+    <div id="gfa">
+
+    <div class="gmain">
+            <img src="{{ url_for('static', filename='../static/images/poster1.jpg')}}" alt="poster1">
+    </div>
+
+    
+    <div class="gmain">
+        <img src="{{ url_for('static', filename='../static/images/poster2.jpg')}}" alt="poster1">
+</div>
+
+
+<div class="gmain">
+    <img src="{{ url_for('static', filename='../static/images/poster3.jpg')}}" alt="poster1">
+</div>
+
+</div>
+</div>
+
+
+<!-- contact info section start here -->
+<div id="contactifo">
+    <div id="cft">contact info</div>
+    <div id="confmain" style="background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.1)), url('{{ url_for('static', filename ='../static/blogpostthumbnail/myimg.jpg')}}');"> 
+        <div>
+            email : <a href="{{params['Contact_Info_Section_Email_url']}}"> {{params['Contact_Info_Section_Email']}} </a>
+            <br>
+            <br>
+            mo.no : <a href="{{params['Contact_Info_Section_Mo_Url_No1']}}">{{params['Contact_Info_Section_Mo_No1']}}</a>, <a href="{{params['Contact_Info_Section_Mo_Url_No2']}}"> {{params['Contact_Info_Section_Mo_No2']}} </a>
+
+            <div id="socail">
+            <a href="{{params['whatsapp_url']}}" target="_blank"><img src="{{ url_for('static', filename='../static/images/whatsapp.svg')}}" alt="whatsapp"></a> 
+            <a href="{{params['facebook_url']}}" target="_blank"><img src="{{ url_for('static', filename='../static/images/facebook.svg')}}" alt="facebook"></a>
+            <a href="{{params['twitter_url']}}" target="_blank"><img src="{{ url_for('static', filename='../static/images/twitter.svg')}}" alt="twitter"></a>
+            <a href="{{params['instagram_url']}}" target="_blank"><img src="{{ url_for('static', filename='../static/images/instagram.svg')}}" alt="instagram"></a>
+        </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- footer section  start-->
+<footer id="footer">
+    
+    <p>{{params['Footer_Section_Copyright_Area']}}</p>
+
+        <button><a href="#about">about</a></button>
+        
+</footer>
+
+<script src="{{ url_for('static', filename='../static/js/main.js')}}"></script>
+</body>
+</html>

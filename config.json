@@ -1,0 +1,37 @@
+{
+    "params":
+    {
+        "local_server": "True",
+        "local_uri": "mysql://root:@localhost/superweb",
+        "prod_uri": "mysql://root:@localhost/superweb",
+        "admin_id":"superweb",
+        "admin_password":"niraj@#&123",
+        "gmail_id":"testappemail100@gmail.com",
+        "gmail_id_pass":"xieq spda mmnh dxou",
+        "login_page_image":"logo.png",
+        "post_image_loc":"D:\\Coding Files\\Programming Languages\\Python\\Python Project\\Flask\\course_blog\\blog_python\\static\\blogpostthumbnail\\",
+        "heading":"Super Web",
+        "Post_Section_heading":"course",
+        "post_section_feature_post_number": 3,
+        "Post_Page_menu_name":"course",
+        "project_page_feature_post_number": 3,
+        "About_Section_Name":"name : niraj bava",
+        "About_Section_Education_Line1":"education : master course in web web development by codewithharry,",
+        "About_Section_Education_Line2":"advanced course in python Programing by codewithharry,",
+        "About_Section_Education_Line3":"master digital-marketing course by google.",
+        "About_Section_Age":"age : 15 year",
+        "About_Section_AboutMe":"Hi I am niraj bava and, I am a web developer, and I have been working in the field of web development for 5+ years and I have developed 51+ web sites so far. I can definitely give you a good web site. If you want to create a web site, be sure to contact me. So if you have any kind of video or photo editing, we can do it for you.",
+        "Gallery_Section_Heading":"popular projects",
+        "Contact_Info_Section_Email":"superweb1010@gmail.com",
+        "Contact_Info_Section_Email_url":"mailto:superweb1010@gmail.com",
+        "Contact_Info_Section_Mo_No1":"8421428192",
+        "Contact_Info_Section_Mo_Url_No1":"tel:+918421428192",
+        "Contact_Info_Section_Mo_No2":"9359839551",
+        "Contact_Info_Section_Mo_Url_No2":"tel:+9359839551",
+        "facebook_url":"https://www.facebook.com/niraj.bava.9",
+        "twitter_url":"https://mobile.twitter.com/Niraj84690426",
+        "instagram_url":"https://www.instagram.com/nirajbava111/",
+        "whatsapp_url":"https://wa.me/9359839551",
+        "Footer_Section_Copyright_Area":"COPYRIGHT © 2020-2021 SUPER WEB ALL RIGHTS RESERVED."
+    }
+}
